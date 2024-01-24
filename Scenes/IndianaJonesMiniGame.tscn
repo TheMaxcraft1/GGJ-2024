@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://bgfwhb6kaverl"]
+[gd_scene load_steps=5 format=3 uid="uid://bgfwhb6kaverl"]
+
+[ext_resource type="Texture2D" uid="uid://hxx142oprwm3" path="res://icon.svg" id="1_c3omn"]
+[ext_resource type="Texture2D" uid="uid://cngwqk78aeajy" path="res://Textures/TempBall.png" id="1_i0ecr"]
+[ext_resource type="Script" path="res://Scripts/Ball.gd" id="2_0v5nm"]
+[ext_resource type="Script" path="res://Scripts/IndJonesPlayer.gd" id="2_rf1br"]
 
 [node name="IndianaJonesMiniGame" type="Node2D"]
+
+[node name="Ball" type="Sprite2D" parent="."]
+position = Vector2(550, 128)
+scale = Vector2(0.605, 0.605)
+texture = ExtResource("1_i0ecr")
+script = ExtResource("2_0v5nm")
+
+[node name="IndJonesPlayer" type="Sprite2D" parent="."]
+position = Vector2(553, 298)
+texture = ExtResource("1_c3omn")
+script = ExtResource("2_rf1br")
