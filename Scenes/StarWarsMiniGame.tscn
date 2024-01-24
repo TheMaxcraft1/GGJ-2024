@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://c6fl61u0huk0n"]
+[gd_scene load_steps=5 format=3 uid="uid://c6fl61u0huk0n"]
+
+[ext_resource type="Texture2D" uid="uid://dq3emjobrwxs8" path="res://Textures/TempLightSaber.png" id="1_hx6us"]
+[ext_resource type="Script" path="res://Scripts/StarWarsMiniGame.gd" id="1_nq6rj"]
+
+[sub_resource type="Curve2D" id="Curve2D_11iuy"]
+_data = {
+"points": PackedVector2Array(-68.0768, 201.561, 68.0768, -201.561, 226, 182, -224.253, 25.362, 224.253, -25.362, 772, 143, 52.0588, -128.145, -52.0588, 128.145, 895, 458, 94.7736, 130.814, -94.7736, -130.814, 221, 560, 0, 0, 0, 0, 226, 182)
+}
+point_count = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nc753"]
+size = Vector2(1369.33, 251.044)
 
 [node name="StarWarsMiniGame" type="Node2D"]
+script = ExtResource("1_nq6rj")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_11iuy")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(226, 182)
+rotation = -1.24508
+loop = false
+
+[node name="LightSaber" type="Sprite2D" parent="Path2D/PathFollow2D"]
+position = Vector2(-61.8702, 64.9419)
+scale = Vector2(0.126374, 0.126374)
+texture = ExtResource("1_hx6us")
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D/LightSaber"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/LightSaber/Area2D"]
+position = Vector2(-2.40825, -16.7285)
+rotation = 2.33874
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_nc753")
