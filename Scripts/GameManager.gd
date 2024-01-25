@@ -6,8 +6,8 @@ var star_wars : int # Number of star wars minigame appearances
 # One minigame left for designing and thinking...
 var third_minigame
 
-var WIDTH # Screen's width just for referencing
-var HEIGHT # Screen's height just for referencing
+var WIDTH = 960 # Screen's width just for referencing
+var HEIGHT = 540 # Screen's height just for referencing
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
