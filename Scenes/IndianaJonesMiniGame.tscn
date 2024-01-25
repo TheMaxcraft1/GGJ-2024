@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://hxx142oprwm3" path="res://icon.svg" id="1_c3omn"]
 [ext_resource type="Script" path="res://Scripts/IndianaJonesMiniGame.gd" id="1_c6e6r"]
-[ext_resource type="Texture2D" uid="uid://cngwqk78aeajy" path="res://Textures/TempBall.png" id="1_i0ecr"]
+[ext_resource type="Texture2D" uid="uid://cngwqk78aeajy" path="res://Textures/IndianaJonesMiniGame/TempBall.png" id="1_i0ecr"]
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="2_0v5nm"]
 [ext_resource type="Script" path="res://Scripts/IndJonesPlayer.gd" id="2_rf1br"]
 
@@ -156,7 +156,7 @@ value = 100.0
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 5.0
 one_shot = true
 autostart = true
 

@@ -5,7 +5,7 @@ var player_win : bool
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var time = $Timer.wait_time
-	$AnimationPlayer.speed_scale = 1 / time
+	$AnimationPlayer.speed_scale = 1 / time # dividing 1 which is the animation lenght by the timer's wait time
 	$AnimationPlayer.play("ball_ind_jones_escaping_anim")
 
 

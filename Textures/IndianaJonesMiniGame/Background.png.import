@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cngwqk78aeajy"
-path="res://.godot/imported/TempBall.png-c3157075352d0215662b514362afa6d7.ctex"
+uid="uid://clq56sus7gtvl"
+path="res://.godot/imported/Background.png-c9ad9a8c175e6810cd2f0e166d0bf0c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/TempBall.png"
-dest_files=["res://.godot/imported/TempBall.png-c3157075352d0215662b514362afa6d7.ctex"]
+source_file="res://Textures/IndianaJonesMiniGame/Background.png"
+dest_files=["res://.godot/imported/Background.png-c9ad9a8c175e6810cd2f0e166d0bf0c3.ctex"]
 
 [params]
 
