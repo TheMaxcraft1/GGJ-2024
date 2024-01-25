@@ -17,11 +17,13 @@ config/icon="res://icon.svg"
 [autoload]
 
 GAMEMNGR="*res://Scripts/GameManager.gd"
+FADE_EFFECT="*res://Scenes/FadeEffect.tscn"
 
 [display]
 
 window/size/viewport_width=960
 window/size/viewport_height=540
+window/size/resizable=false
 
 [input]
 

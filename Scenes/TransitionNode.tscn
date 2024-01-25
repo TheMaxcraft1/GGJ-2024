@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bi76ytoqekhsr"]
+[gd_scene load_steps=3 format=3 uid="uid://e3qtblxaxu8t"]
 
 [ext_resource type="Script" path="res://Scripts/TransitionNode.gd" id="1_b8wnr"]
+[ext_resource type="FontFile" uid="uid://c30m0eaghd5hx" path="res://Fonts/Comicy.ttf" id="2_yh8cp"]
 
 [node name="TransitionNode" type="Node2D"]
 script = ExtResource("1_b8wnr")
@@ -8,9 +9,11 @@ script = ExtResource("1_b8wnr")
 [node name="ScoreLabel" type="Label" parent="."]
 offset_right = 958.0
 offset_bottom = 187.0
+theme_override_fonts/font = ExtResource("2_yh8cp")
 theme_override_font_sizes/font_size = 100
 text = "Puntaje: "
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TransitionTime" type="Timer" parent="."]
 wait_time = 5.0

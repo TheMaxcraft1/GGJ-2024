@@ -11,18 +11,18 @@ func _ready():
 func _process(delta):
 	checkLose()
 	
-	$ProgressBar.value += -(delta * 10)
+	$ProgressBar.value += -(delta * 25)
 	
 	if Input.is_action_just_pressed("Interact"):
 		$ProgressBar.value += (delta * 500)
 	
-	$HUD/TimerLabel.text = str(int($Timer.time_left)) + " sec"
+	$HUD/TimerLabel.text = str(ceil($Timer.time_left)) + " sec"
 	
 	if player_win == true: # go into a transition
 		GAMEMNGR.score += 1
 		player_win = false
 		GAMEMNGR.ind_jones += 1
-		get_tree().change_scene_to_file("res://Scenes/TransitionNode.tscn")
+		FADE_EFFECT.scene_transition("res://Scenes/TransitionNode.tscn")
 	
 
 func _on_timer_timeout():
