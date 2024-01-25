@@ -4,7 +4,9 @@ var player_win : bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var time = $Timer.wait_time
+	$AnimationPlayer.speed_scale = 1 / time
+	$AnimationPlayer.play("ball_ind_jones_escaping_anim")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

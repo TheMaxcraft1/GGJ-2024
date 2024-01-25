@@ -20,7 +20,8 @@ curve = SubResource("Curve2D_11iuy")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(226, 182)
-rotation = -1.24508
+rotation = -1.55757
+progress = 2159.92
 loop = false
 
 [node name="LightSaber" type="Sprite2D" parent="Path2D/PathFollow2D"]
