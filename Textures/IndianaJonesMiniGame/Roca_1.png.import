@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clq56sus7gtvl"
-path="res://.godot/imported/Background.png-c9ad9a8c175e6810cd2f0e166d0bf0c3.ctex"
+uid="uid://bjq8hqlolkufj"
+path="res://.godot/imported/Roca_1.png-c21f452d4222d2770fa5c4ea6398756d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/IndianaJonesMiniGame/Background.png"
-dest_files=["res://.godot/imported/Background.png-c9ad9a8c175e6810cd2f0e166d0bf0c3.ctex"]
+source_file="res://Textures/IndianaJonesMiniGame/Roca_1.png"
+dest_files=["res://.godot/imported/Roca_1.png-c21f452d4222d2770fa5c4ea6398756d.ctex"]
 
 [params]
 
