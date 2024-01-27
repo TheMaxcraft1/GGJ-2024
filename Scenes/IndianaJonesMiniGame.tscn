@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bgfwhb6kaverl"]
+[gd_scene load_steps=35 format=3 uid="uid://bgfwhb6kaverl"]
 
 [ext_resource type="Script" path="res://Scripts/IndianaJonesMiniGame.gd" id="1_c6e6r"]
 [ext_resource type="Texture2D" uid="uid://behpdan8yw8t2" path="res://Textures/IndianaJonesMiniGame/Background.jpg" id="2_rpjiw"]
@@ -10,9 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://ct2r6nkj8yjxx" path="res://Textures/IndianaJonesMiniGame/Roca_2.png" id="6_u02hd"]
 [ext_resource type="Texture2D" uid="uid://kv7nhf4yf3n2" path="res://Textures/IndianaJonesMiniGame/Roca_3.png" id="7_a83oa"]
 [ext_resource type="Texture2D" uid="uid://cq31qqdqqbbdo" path="res://Textures/IndianaJonesMiniGame/IndianaJonesSpriteSheet (2).png" id="8_8juwx"]
+[ext_resource type="Texture2D" uid="uid://fssvmrvhne6p" path="res://Textures/IndianaJonesMiniGame/UI/UI_INDIANAJONES-02.png" id="9_nss1x"]
+[ext_resource type="FontFile" uid="uid://5541nbtfqqog" path="res://Fonts/Dosis-VariableFont_wght.ttf" id="10_58qf8"]
 [ext_resource type="Texture2D" uid="uid://cl8q2f0ge52nj" path="res://Textures/IndianaJonesMiniGame/IndianaJonesSpriteSheet 6.png" id="11_vjysu"]
 [ext_resource type="AudioStream" uid="uid://85f1ewkqxx1t" path="res://Music/IndianaJonesMiniGame/Indiana_Jones_8Bit.wav" id="11_yyygf"]
 [ext_resource type="AudioStream" uid="uid://763jrxw16jkp" path="res://Music/IndianaJonesMiniGame/Indiana_Jones_Flute.wav" id="12_nloc5"]
+[ext_resource type="Texture2D" uid="uid://dr67ijxd2b4kq" path="res://Textures/IndianaJonesMiniGame/EndAnimSprites/EndAnim1.png" id="15_ks6iw"]
+[ext_resource type="Texture2D" uid="uid://c0ywyjdk7ua5y" path="res://Textures/IndianaJonesMiniGame/UI/UI_INDIANAJONES-08.png" id="16_8g2jh"]
+[ext_resource type="Texture2D" uid="uid://c8xw5nfql1wlo" path="res://Textures/IndianaJonesMiniGame/EndAnimSprites/EndAnim2.png" id="16_x1erl"]
+[ext_resource type="Texture2D" uid="uid://dk1rt3um7tkme" path="res://Textures/IndianaJonesMiniGame/EndAnimSprites/EndAnim3.png" id="17_eyqxd"]
+[ext_resource type="Texture2D" uid="uid://c77l877vgt1fj" path="res://Textures/IndianaJonesMiniGame/EndAnimSprites/EndAnim4.png" id="18_b4gg6"]
+[ext_resource type="Texture2D" uid="uid://tpkefkuwrvl3" path="res://Textures/IndianaJonesMiniGame/EndAnimSprites/EndAnim5.png" id="19_meblu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ouq5t"]
 animations = [{
@@ -45,8 +53,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2u838"]
-bg_color = Color(0, 0.72549, 0.227451, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qxdf"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_t45ej"]
+colors = PackedColorArray(1, 0, 0, 1, 0, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fsrab"]
+gradient = SubResource("Gradient_t45ej")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lmg47"]
+texture = SubResource("GradientTexture1D_fsrab")
 
 [sub_resource type="Animation" id="Animation_43jcv"]
 resource_name = "RESET"
@@ -287,6 +304,59 @@ tracks/3/keys = {
 "values": [Vector2(480, -329), Vector2(480, 344)]
 }
 
+[sub_resource type="Animation" id="Animation_gwbca"]
+resource_name = "instructions_anim"
+length = 7.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/InstructionsLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.95, 3.8, 5.62),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["TAP", "FOR", "YOUR", "LIFE"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HUD/InstructionsLabel:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 0.9, 1, 1.95, 2.65, 2.75, 2.88, 3.8, 4.48, 4.6, 4.72, 5.62, 6.32, 6.44, 6.56),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [100, 150, 200, 250, 100, 150, 200, 250, 100, 150, 200, 250, 100, 150, 200, 250]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("IndJonesPlayer:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.03),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_6s3jg")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("IndJonesPlayer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.03),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, 270)]
+}
+
 [sub_resource type="Animation" id="Animation_16vfw"]
 resource_name = "lose_anim"
 length = 3.0
@@ -355,33 +425,31 @@ tracks/3/keys = {
 "values": [Vector2(1.3, 1.3)]
 }
 
-[sub_resource type="Animation" id="Animation_gwbca"]
-resource_name = "instructions_anim"
-length = 7.0
-step = 0.01
+[sub_resource type="Animation" id="Animation_c4h6a"]
+resource_name = "end_anim2"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("HUD/InstructionsLabel:text")
+tracks/0/path = NodePath("IndJonesPlayer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.95, 3.8, 5.62),
+"times": PackedFloat32Array(0, 0.1, 0.5, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": ["TAP", "FOR", "YOUR", "LIFE"]
+"values": [Vector2(480, 353), Vector2(505.5, 107.8), Vector2(503.5, 161.8), Vector2(433.5, 191.8)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("HUD/InstructionsLabel:theme_override_font_sizes/font_size")
+tracks/1/path = NodePath("IndJonesPlayer:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8, 0.9, 1, 1.95, 2.65, 2.75, 2.88, 3.8, 4.48, 4.6, 4.72, 5.62, 6.32, 6.44, 6.56),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [100, 150, 200, 250, 100, 150, 200, 250, 100, 150, 200, 250, 100, 150, 200, 250]
+"values": [Vector2(0.6, 0.6), Vector2(0.5, 0.5)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -390,22 +458,10 @@ tracks/2/path = NodePath("IndJonesPlayer:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.03),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("3_6s3jg")]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("IndJonesPlayer:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.03),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(480, 270)]
+"values": [ExtResource("15_ks6iw"), ExtResource("16_x1erl"), ExtResource("17_eyqxd"), ExtResource("18_b4gg6"), ExtResource("19_meblu")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ftk4t"]
@@ -413,6 +469,7 @@ _data = {
 "RESET": SubResource("Animation_43jcv"),
 "ball_ind_jones_escaping_anim": SubResource("Animation_uajbr"),
 "end_anim1": SubResource("Animation_rqqx7"),
+"end_anim2": SubResource("Animation_c4h6a"),
 "instructions_anim": SubResource("Animation_gwbca"),
 "lose_anim": SubResource("Animation_16vfw"),
 "start_anim": SubResource("Animation_mvckv")
@@ -443,7 +500,8 @@ offset_top = 474.0
 offset_right = 1285.0
 offset_bottom = 504.0
 rotation = -1.5708
-theme_override_styles/fill = SubResource("StyleBoxFlat_2u838")
+theme_override_styles/background = SubResource("StyleBoxFlat_3qxdf")
+theme_override_styles/fill = SubResource("StyleBoxTexture_lmg47")
 step = -0.01
 value = 100.0
 show_percentage = false
@@ -454,19 +512,6 @@ one_shot = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="TimerLabel" type="Label" parent="HUD"]
-offset_right = 99.0
-offset_bottom = 93.0
-theme_override_font_sizes/font_size = 68
-text = "5"
-horizontal_alignment = 1
-
-[node name="DebugScoreLabel" type="Label" parent="HUD"]
-offset_left = 3.0
-offset_top = 509.0
-offset_right = 43.0
-offset_bottom = 532.0
-
 [node name="InstructionsLabel" type="Label" parent="HUD"]
 offset_right = 960.0
 offset_bottom = 540.0
@@ -476,6 +521,31 @@ theme_override_font_sizes/font_size = 100
 text = "TAP"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TimerSprite" type="TextureRect" parent="HUD"]
+offset_left = 10.0
+offset_right = 165.0
+offset_bottom = 75.0
+texture = ExtResource("9_nss1x")
+
+[node name="TimerLabel" type="Label" parent="HUD"]
+offset_left = 45.0
+offset_top = 12.0
+offset_right = 144.0
+offset_bottom = 105.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("10_58qf8")
+theme_override_font_sizes/font_size = 50
+text = "5"
+horizontal_alignment = 1
+
+[node name="TapForYourLifeSprite" type="Sprite2D" parent="HUD"]
+position = Vector2(480, 47)
+texture = ExtResource("16_8g2jh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -498,5 +568,8 @@ stream = ExtResource("12_nloc5")
 volume_db = -80.0
 autoplay = true
 bus = &"Music"
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(523, 574, 523, 578)
 
 [connection signal="timeout" from="MGTimer" to="." method="_on_mg_timer_timeout"]

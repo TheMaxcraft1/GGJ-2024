@@ -23,5 +23,5 @@ func _process(delta):
 
 
 func _on_transition_time_timeout():
-	#GO TO ANOTHER MINIGAME
+	FADE_EFFECT.scene_transition('res://Scenes/IndianaJonesMiniGame.tscn')
 	pass
