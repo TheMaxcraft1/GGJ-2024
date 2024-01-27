@@ -6,6 +6,8 @@ var star_wars : int # Number of star wars minigame appearances
 # One minigame left for designing and thinking...
 var third_minigame
 
+var currentMG : String # Current minigame for transition backgrounds
+
 var WIDTH = 960 # Screen's width just for referencing
 var HEIGHT = 540 # Screen's height just for referencing
 

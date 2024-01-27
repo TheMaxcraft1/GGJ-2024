@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bgfwhb6kaverl"]
+[gd_scene load_steps=23 format=3 uid="uid://bgfwhb6kaverl"]
 
 [ext_resource type="Script" path="res://Scripts/IndianaJonesMiniGame.gd" id="1_c6e6r"]
 [ext_resource type="Texture2D" uid="uid://behpdan8yw8t2" path="res://Textures/IndianaJonesMiniGame/Background.jpg" id="2_rpjiw"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://ct2r6nkj8yjxx" path="res://Textures/IndianaJonesMiniGame/Roca_2.png" id="6_u02hd"]
 [ext_resource type="Texture2D" uid="uid://kv7nhf4yf3n2" path="res://Textures/IndianaJonesMiniGame/Roca_3.png" id="7_a83oa"]
 [ext_resource type="Texture2D" uid="uid://cq31qqdqqbbdo" path="res://Textures/IndianaJonesMiniGame/IndianaJonesSpriteSheet (2).png" id="8_8juwx"]
+[ext_resource type="Texture2D" uid="uid://cl8q2f0ge52nj" path="res://Textures/IndianaJonesMiniGame/IndianaJonesSpriteSheet 6.png" id="11_vjysu"]
+[ext_resource type="AudioStream" uid="uid://85f1ewkqxx1t" path="res://Music/IndianaJonesMiniGame/Indiana_Jones_8Bit.wav" id="11_yyygf"]
+[ext_resource type="AudioStream" uid="uid://763jrxw16jkp" path="res://Music/IndianaJonesMiniGame/Indiana_Jones_Flute.wav" id="12_nloc5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ouq5t"]
 animations = [{
@@ -106,7 +109,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(480, 253)]
+"values": [Vector2(480, -226)]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -131,6 +134,30 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(480, -329)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HUD/InstructionsLabel:theme_override_font_sizes/font_size")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [100]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HUD/InstructionsLabel:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["TAP"]
 }
 
 [sub_resource type="Animation" id="Animation_uajbr"]
@@ -209,58 +236,6 @@ tracks/5/keys = {
 "values": [Vector2(1.3, 1.3), Vector2(2, 2)]
 }
 
-[sub_resource type="Animation" id="Animation_mvckv"]
-resource_name = "start_anim"
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("IndJonesPlayer:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("3_6s3jg"), ExtResource("8_8juwx")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("IndJonesPlayer:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(480, 270)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Rock:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.55, 0.7, 0.85, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(480, -147), Vector2(480, 140), Vector2(480, 100), Vector2(480, 140), Vector2(480, 120), Vector2(480, 140)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Rock:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.3, 1.3)]
-}
-
 [sub_resource type="Animation" id="Animation_rqqx7"]
 resource_name = "end_anim1"
 tracks/0/type = "value"
@@ -314,12 +289,131 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_16vfw"]
 resource_name = "lose_anim"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IndJonesPlayer:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_vjysu")]
+}
+
+[sub_resource type="Animation" id="Animation_mvckv"]
+resource_name = "start_anim"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IndJonesPlayer:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_6s3jg"), ExtResource("8_8juwx")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IndJonesPlayer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, 270)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Rock:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.55, 0.7, 0.85, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(480, -147), Vector2(480, 140), Vector2(480, 100), Vector2(480, 140), Vector2(480, 120), Vector2(480, 140)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Rock:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.3, 1.3)]
+}
+
+[sub_resource type="Animation" id="Animation_gwbca"]
+resource_name = "instructions_anim"
+length = 7.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/InstructionsLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.95, 3.8, 5.62),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["TAP", "FOR", "YOUR", "LIFE"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HUD/InstructionsLabel:theme_override_font_sizes/font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 0.9, 1, 1.95, 2.65, 2.75, 2.88, 3.8, 4.48, 4.6, 4.72, 5.62, 6.32, 6.44, 6.56),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [100, 150, 200, 250, 100, 150, 200, 250, 100, 150, 200, 250, 100, 150, 200, 250]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("IndJonesPlayer:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.03),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_6s3jg")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("IndJonesPlayer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.03),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, 270)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ftk4t"]
 _data = {
 "RESET": SubResource("Animation_43jcv"),
 "ball_ind_jones_escaping_anim": SubResource("Animation_uajbr"),
 "end_anim1": SubResource("Animation_rqqx7"),
+"instructions_anim": SubResource("Animation_gwbca"),
 "lose_anim": SubResource("Animation_16vfw"),
 "start_anim": SubResource("Animation_mvckv")
 }
@@ -333,7 +427,7 @@ offset_bottom = 540.0
 texture = ExtResource("2_rpjiw")
 
 [node name="Rock" type="AnimatedSprite2D" parent="."]
-position = Vector2(480, 253)
+position = Vector2(480, -226)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ouq5t")
 animation = &"start_anim"
@@ -373,6 +467,16 @@ offset_top = 509.0
 offset_right = 43.0
 offset_bottom = 532.0
 
+[node name="InstructionsLabel" type="Label" parent="HUD"]
+offset_right = 960.0
+offset_bottom = 540.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 100
+text = "TAP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_ftk4t")
@@ -383,5 +487,16 @@ texture_filter = 2
 position = Vector2(480, -329)
 scale = Vector2(3, 3)
 texture = ExtResource("3_gljo7")
+
+[node name="EightbitMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_yyygf")
+autoplay = true
+bus = &"Music"
+
+[node name="FluteMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_nloc5")
+volume_db = -80.0
+autoplay = true
+bus = &"Music"
 
 [connection signal="timeout" from="MGTimer" to="." method="_on_mg_timer_timeout"]
