@@ -529,15 +529,13 @@ offset_bottom = 75.0
 texture = ExtResource("9_nss1x")
 
 [node name="TimerLabel" type="Label" parent="HUD"]
-offset_left = 45.0
+offset_left = 46.0
 offset_top = 12.0
-offset_right = 144.0
-offset_bottom = 105.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+offset_right = 164.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0.278431, 0.227451, 0.407843, 1)
 theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
-theme_override_constants/outline_size = 2
 theme_override_fonts/font = ExtResource("10_58qf8")
 theme_override_font_sizes/font_size = 50
 text = "5"
