@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ti74wmbikx4x"
-path="res://.godot/imported/StairPättern.png-c7521c19b24e7c27c01fe000521e86d9.ctex"
+path="res://.godot/imported/StairPattern.png-f15d5d87b2ee258e86ee2966fbd6d781.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/StarWarsMiniGame/Patterns/StairPättern.png"
-dest_files=["res://.godot/imported/StairPättern.png-c7521c19b24e7c27c01fe000521e86d9.ctex"]
+source_file="res://Textures/StarWarsMiniGame/Patterns/StairPattern.png"
+dest_files=["res://.godot/imported/StairPattern.png-f15d5d87b2ee258e86ee2966fbd6d781.ctex"]
 
 [params]
 

@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6fl61u0huk0n"]
+[gd_scene load_steps=5 format=3 uid="uid://c6fl61u0huk0n"]
 
 [ext_resource type="Script" path="res://Scripts/StarWarsMiniGame.gd" id="1_nq6rj"]
-[ext_resource type="Texture2D" uid="uid://cvvcnd5btek0d" path="res://Textures/StarWarsMiniGame/Patterns/CirclePattern.png" id="2_8jq36"]
 [ext_resource type="Script" path="res://addons/path2dslider/path2dslider.gd" id="2_rvc6o"]
 [ext_resource type="Texture2D" uid="uid://c2ytgfv7l64r3" path="res://Textures/StarWarsMiniGame/LightSaber/LightSaber.png" id="3_ykiff"]
-[ext_resource type="Curve2D" uid="uid://dn7layfirk5x4" path="res://StarWarsPatternPoints/CirclePatternPoints.tres" id="4_a7qhm"]
 
 [sub_resource type="Curve" id="Curve_prgvj"]
 min_value = -1.0
@@ -17,7 +15,6 @@ script = ExtResource("1_nq6rj")
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 960.0
 offset_bottom = 540.0
-texture = ExtResource("2_8jq36")
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -38,19 +35,17 @@ offset_right = 322.0
 offset_bottom = 185.0
 script = ExtResource("2_rvc6o")
 marker_start_rotation = 5.61038
-progress_ratio = 0.03
 
 [node name="Path2D" type="Path2D" parent="CanvasLayer/Path2DSlider"]
-curve = ExtResource("4_a7qhm")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Path2DSlider"]
 layout_mode = 0
-offset_left = 108.147
-offset_top = 25.5553
-offset_right = 465.147
-offset_bottom = 2472.56
+offset_left = 86.0
+offset_top = 41.0
+offset_right = 443.0
+offset_bottom = 2488.0
 rotation = -4.64854
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.09, 0.09)
 pivot_offset = Vector2(-30, 0)
 texture = ExtResource("3_ykiff")
 

@@ -26,6 +26,7 @@ signal changed_progress_ratio(ratio)
 func _ready():
 	get_tree().node_added.connect(_on_scene_nodes_changed)
 	get_tree().node_removed.connect(_on_scene_nodes_changed)
+	await get_tree().create_timer(0.1).timeout
 	_analyze_children()
 
 func _on_scene_nodes_changed(node : Node):
@@ -45,9 +46,11 @@ func _analyze_children():
 		_marker.gui_input.connect(_on_marker_gui_input)
 		if _curve != null:
 			var blen = _curve.get_baked_length()
+			
 			_position_marker(progress_ratio * blen)
 		update_configuration_warnings()
 	if old_curve != _curve:
+		print("hello")
 		if _curve != null:
 			_curve.changed.connect(_on_curve_changed)
 		var blen = _curve.get_baked_length()
@@ -68,11 +71,14 @@ func _position_marker(value):
 func _on_marker_gui_input(event):
 	if _dragging:
 		if event is InputEventMouseMotion:
+			var old_progress_ratio = progress_ratio
 			var mouseevent = event as InputEventMouseMotion
 			var mousepos_local = get_global_transform().affine_inverse() * mouseevent.global_position
 			var blen = _curve.get_baked_length()
 			var offset = _curve.get_closest_offset(mousepos_local)
-			progress_ratio = offset / blen
+			if offset/blen >= old_progress_ratio and offset/blen < old_progress_ratio + 0.05:
+				progress_ratio = offset / blen
+			
 	if event is InputEventMouseButton:
 		var mouseevent = event as InputEventMouseButton
 		if mouseevent.button_index == MOUSE_BUTTON_LEFT:

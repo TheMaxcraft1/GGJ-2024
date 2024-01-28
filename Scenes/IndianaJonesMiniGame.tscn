@@ -304,6 +304,45 @@ tracks/3/keys = {
 "values": [Vector2(480, -329), Vector2(480, 344)]
 }
 
+[sub_resource type="Animation" id="Animation_c4h6a"]
+resource_name = "end_anim2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("IndJonesPlayer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(480, 353), Vector2(505.5, 107.8), Vector2(503.5, 161.8), Vector2(433.5, 191.8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("IndJonesPlayer:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0.6, 0.6), Vector2(0.5, 0.5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("IndJonesPlayer:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("15_ks6iw"), ExtResource("16_x1erl"), ExtResource("17_eyqxd"), ExtResource("18_b4gg6"), ExtResource("19_meblu")]
+}
+
 [sub_resource type="Animation" id="Animation_gwbca"]
 resource_name = "instructions_anim"
 length = 7.0
@@ -423,45 +462,6 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1.3, 1.3)]
-}
-
-[sub_resource type="Animation" id="Animation_c4h6a"]
-resource_name = "end_anim2"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("IndJonesPlayer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(480, 353), Vector2(505.5, 107.8), Vector2(503.5, 161.8), Vector2(433.5, 191.8)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("IndJonesPlayer:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(0.6, 0.6), Vector2(0.5, 0.5)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("IndJonesPlayer:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3, 0.5, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("15_ks6iw"), ExtResource("16_x1erl"), ExtResource("17_eyqxd"), ExtResource("18_b4gg6"), ExtResource("19_meblu")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ftk4t"]

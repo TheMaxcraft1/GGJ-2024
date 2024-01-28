@@ -1,5 +1,10 @@
 extends Control
 
+func _ready():
+	GAMEMNGR.ind_jones = 0
+	GAMEMNGR.star_wars = 0
+	
+
 
 func _on_play_pressed(): #Boton de Play
 	FADE_EFFECT.scene_transition('res://Scenes/IndianaJonesMiniGame.tscn')
