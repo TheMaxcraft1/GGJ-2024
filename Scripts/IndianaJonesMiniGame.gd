@@ -47,7 +47,7 @@ func _process(delta):
 	checkLose()
 	
 	if minigame_started:
-		$ProgressBar.value += -(delta * 25 * difficulty_scale) # Progress bar counter force
+		$ProgressBar.value += -(delta * 20 * difficulty_scale) # Progress bar counter force
 	
 		if Input.is_action_just_pressed("Interact"):
 			$ProgressBar.value += (delta * player_force)
@@ -75,10 +75,10 @@ func _process(delta):
 		$HUD/TimerLabel.set_visible(false)
 		$Rock.play("start_anim")
 		$AnimationPlayer.speed_scale = 1
-		#var end_anim_array = ["end_anim1", "end_anim2"]
-		#randomize()
-		#$AnimationPlayer.play(end_anim_array[randi() % end_anim_array.size()])
-		$AnimationPlayer.play("end_anim2")
+		var end_anim_array = ["end_anim1", "end_anim2"]
+		randomize()
+		$AnimationPlayer.play(end_anim_array[randi() % end_anim_array.size()])
+		#$AnimationPlayer.play("end_anim2")
 		GAMEMNGR.score += 1
 		await get_tree().create_timer(1).timeout
 		FADE_EFFECT.scene_transition("res://Scenes/TransitionNode.tscn")

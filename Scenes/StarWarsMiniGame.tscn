@@ -1,29 +1,304 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6fl61u0huk0n"]
+[gd_scene load_steps=24 format=3 uid="uid://c6fl61u0huk0n"]
 
 [ext_resource type="Script" path="res://Scripts/StarWarsMiniGame.gd" id="1_nq6rj"]
+[ext_resource type="Texture2D" uid="uid://u1rkx2hrx0pv" path="res://Textures/StarWarsMiniGame/Backgrounds/TreasureBG.png" id="2_mhig6"]
 [ext_resource type="Script" path="res://addons/path2dslider/path2dslider.gd" id="2_rvc6o"]
+[ext_resource type="Texture2D" uid="uid://d2a233hsjvade" path="res://Textures/StarWarsMiniGame/Backgrounds/PoopBG2.png" id="2_x4o85"]
+[ext_resource type="Texture2D" uid="uid://cxfcbhojc4d5f" path="res://Textures/StarWarsMiniGame/Patterns/BrokeStarPattern.png" id="3_v4uf2"]
 [ext_resource type="Texture2D" uid="uid://c2ytgfv7l64r3" path="res://Textures/StarWarsMiniGame/LightSaber/LightSaber.png" id="3_ykiff"]
+[ext_resource type="Texture2D" uid="uid://cx0ivhfu4d8aw" path="res://Textures/StarWarsMiniGame/UI/InstructionsUI.png" id="4_ggb1e"]
+[ext_resource type="Texture2D" uid="uid://d0txjpfqntlrp" path="res://Textures/StarWarsMiniGame/Patterns/StarPattern.png" id="4_j1j4b"]
 [ext_resource type="AudioStream" uid="uid://dyhnfactapble" path="res://Music/StarWarsMiniGame/StarWarsMGSong.wav" id="4_ob4sl"]
+[ext_resource type="Texture2D" uid="uid://cpjx6k37sn3qe" path="res://Textures/StarWarsMiniGame/UI/TimerUI.png" id="5_2wndf"]
+[ext_resource type="FontFile" uid="uid://5541nbtfqqog" path="res://Fonts/Dosis-VariableFont_wght.ttf" id="6_wd1v8"]
+[ext_resource type="Texture2D" uid="uid://dfrx4rxuoboo2" path="res://Textures/StarWarsMiniGame/Backgrounds/BankBG.png" id="9_5a4tn"]
+[ext_resource type="Texture2D" uid="uid://bguaa0t43d1uf" path="res://Textures/StarWarsMiniGame/Backgrounds/PoopBG1.png" id="11_yfr3n"]
+[ext_resource type="AudioStream" uid="uid://dw7cdvw2lunar" path="res://SFX/StarWars/FartSFX.mp3" id="12_fqdgq"]
+[ext_resource type="AudioStream" uid="uid://s4y8tyginv1k" path="res://SFX/StarWars/BathGibberish.mp3" id="13_rjn1c"]
+[ext_resource type="AudioStream" uid="uid://buflckt04puky" path="res://SFX/StarWars/WinningStarWarsSFX.wav" id="14_p60wl"]
 
 [sub_resource type="Curve" id="Curve_prgvj"]
 min_value = -1.0
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="Animation" id="Animation_y65pb"]
+resource_name = "win_anim1"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BACKBackground:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_5a4tn")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StarWarsSong:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -32.842]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WinningSFX:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_wicet"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BACKBackground:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_x4o85")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StarWarsSong:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BathGibberish:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/InstructionsLabel:theme_override_font_sizes/font_size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [60]
+}
+
+[sub_resource type="Animation" id="Animation_wdxl2"]
+resource_name = "win_anim2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BACKBackground:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_mhig6")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StarWarsSong:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -32.842]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WinningSFX:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_frr8i"]
+resource_name = "lose_anim"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BACKBackground:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("11_yfr3n"), ExtResource("2_x4o85")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FartSFX:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StarWarsSong:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -32.842]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BathGibberish:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_bivjk"]
+resource_name = "start_anim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/InstructionsLabel:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [50, 60, 70, 80, 90, 100]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rgx7f"]
+_data = {
+"RESET": SubResource("Animation_wicet"),
+"lose_anim": SubResource("Animation_frr8i"),
+"start_anim": SubResource("Animation_bivjk"),
+"win_anim1": SubResource("Animation_y65pb"),
+"win_anim2": SubResource("Animation_wdxl2")
+}
+
 [node name="StarWarsMiniGame" type="Node2D"]
 script = ExtResource("1_nq6rj")
+
+[node name="BACKBackground" type="TextureRect" parent="."]
+offset_right = 976.0
+offset_bottom = 538.0
+texture = ExtResource("2_x4o85")
+
+[node name="BrokeBackground" type="TextureRect" parent="."]
+offset_right = 960.0
+offset_bottom = 540.0
+texture = ExtResource("3_v4uf2")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 960.0
 offset_bottom = 540.0
+texture = ExtResource("4_j1j4b")
 
 [node name="Timer" type="Timer" parent="."]
-
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 50
-text = "PROGRESS RATIO"
+wait_time = 10.0
+one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -67,6 +342,57 @@ hue_variation_min = -0.11
 hue_variation_max = 0.16
 hue_variation_curve = SubResource("Curve_prgvj")
 
+[node name="InstructionsUi" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(480, 50)
+texture = ExtResource("4_ggb1e")
+
+[node name="TimerUi" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(109.5, 50)
+texture = ExtResource("5_2wndf")
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer"]
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 207.0
+offset_bottom = 83.0
+theme_override_fonts/font = ExtResource("6_wd1v8")
+theme_override_font_sizes/font_size = 35
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionsLabel" type="Label" parent="CanvasLayer"]
+offset_right = 960.0
+offset_bottom = 540.0
+theme_override_fonts/font = ExtResource("6_wd1v8")
+theme_override_font_sizes/font_size = 60
+text = "DRAG THE LIGHTSABER
+TO BREAK THE WALL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="StarWarsSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ob4sl")
 autoplay = true
+bus = &"Music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rgx7f")
+}
+
+[node name="FartSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_fqdgq")
+bus = &"SFX"
+
+[node name="BathGibberish" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_rjn1c")
+volume_db = -15.0
+pitch_scale = 1.75
+bus = &"SFX"
+
+[node name="WinningSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_p60wl")
+bus = &"SFX"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

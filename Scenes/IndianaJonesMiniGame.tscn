@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bgfwhb6kaverl"]
+[gd_scene load_steps=39 format=3 uid="uid://bgfwhb6kaverl"]
 
 [ext_resource type="Script" path="res://Scripts/IndianaJonesMiniGame.gd" id="1_c6e6r"]
 [ext_resource type="Texture2D" uid="uid://behpdan8yw8t2" path="res://Textures/IndianaJonesMiniGame/Background.jpg" id="2_rpjiw"]
@@ -21,6 +21,10 @@
 [ext_resource type="Texture2D" uid="uid://dk1rt3um7tkme" path="res://Textures/IndianaJonesMiniGame/EndAnimSprites/EndAnim3.png" id="17_eyqxd"]
 [ext_resource type="Texture2D" uid="uid://c77l877vgt1fj" path="res://Textures/IndianaJonesMiniGame/EndAnimSprites/EndAnim4.png" id="18_b4gg6"]
 [ext_resource type="Texture2D" uid="uid://tpkefkuwrvl3" path="res://Textures/IndianaJonesMiniGame/EndAnimSprites/EndAnim5.png" id="19_meblu"]
+[ext_resource type="AudioStream" uid="uid://bl6yjoo31e5tq" path="res://SFX/IndianaJones/SplashDeathSFX.mp3" id="22_xfblh"]
+[ext_resource type="AudioStream" uid="uid://bhi3a3j2riwwr" path="res://SFX/IndianaJones/RockFalling.mp3" id="23_jf711"]
+[ext_resource type="AudioStream" uid="uid://c6qg6crs5nqop" path="res://SFX/IndianaJones/RockMoving.mp3" id="24_yr61r"]
+[ext_resource type="AudioStream" uid="uid://crjglbkr2dr0w" path="res://SFX/IndianaJones/ComicShout.mp3" id="25_f0ga2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ouq5t"]
 animations = [{
@@ -176,6 +180,18 @@ tracks/8/keys = {
 "update": 1,
 "values": ["TAP"]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("SplashSFX:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_uajbr"]
 resource_name = "ball_ind_jones_escaping_anim"
@@ -252,6 +268,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(1.3, 1.3), Vector2(2, 2)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RockMoving:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_rqqx7"]
 resource_name = "end_anim1"
@@ -303,6 +331,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(480, -329), Vector2(480, 344)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SplashSFX:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_c4h6a"]
 resource_name = "end_anim2"
@@ -341,6 +381,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("15_ks6iw"), ExtResource("16_x1erl"), ExtResource("17_eyqxd"), ExtResource("18_b4gg6"), ExtResource("19_meblu")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SplashSFX:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_gwbca"]
@@ -463,6 +515,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(1.3, 1.3)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RockFalling:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(-0.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ComicShout:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ftk4t"]
 _data = {
@@ -534,15 +610,13 @@ offset_top = 12.0
 offset_right = 164.0
 offset_bottom = 76.0
 theme_override_colors/font_color = Color(0.278431, 0.227451, 0.407843, 1)
-theme_override_constants/shadow_offset_x = 1
-theme_override_constants/shadow_offset_y = 1
 theme_override_fonts/font = ExtResource("10_58qf8")
 theme_override_font_sizes/font_size = 50
 text = "5"
 horizontal_alignment = 1
 
 [node name="TapForYourLifeSprite" type="Sprite2D" parent="HUD"]
-position = Vector2(480, 47)
+position = Vector2(480, 50)
 texture = ExtResource("16_8g2jh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -567,7 +641,23 @@ volume_db = -80.0
 autoplay = true
 bus = &"Music"
 
-[node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(523, 574, 523, 578)
+[node name="SplashSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_xfblh")
+bus = &"SFX"
+
+[node name="RockFalling" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_jf711")
+volume_db = -14.232
+bus = &"SFX"
+
+[node name="RockMoving" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("24_yr61r")
+volume_db = -14.232
+bus = &"SFX"
+
+[node name="ComicShout" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_f0ga2")
+volume_db = -7.15
+bus = &"SFX"
 
 [connection signal="timeout" from="MGTimer" to="." method="_on_mg_timer_timeout"]

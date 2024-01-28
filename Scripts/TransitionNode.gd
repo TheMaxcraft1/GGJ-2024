@@ -7,14 +7,14 @@ func _ready():
 	if GAMEMNGR.currentMG == "indiana_jones":
 		$Background.texture = preload('res://Textures/TransitionBackgrounds/IndJonesTransitionBG.png')
 	elif GAMEMNGR.currentMG == 'star_wars':
-		pass
+		$Background.texture = preload('res://Textures/TransitionBackgrounds/StarWarsTransitionBG.png')
 	else:
 		pass
 	
 	
 	
 	
-	$ScoreLabel.text = "PUNTAJE: " + str(GAMEMNGR.score)
+	$ScoreLabel.text = "SCORE: " + str(GAMEMNGR.score)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,5 +23,11 @@ func _process(delta):
 
 
 func _on_transition_time_timeout():
-	FADE_EFFECT.scene_transition('res://Scenes/IndianaJonesMiniGame.tscn')
-	pass
+	if GAMEMNGR.currentMG == "indiana_jones":
+		var scenes = ['res://Scenes/StarWarsMiniGame.tscn']
+		FADE_EFFECT.scene_transition(scenes[randi() % scenes.size()])
+	elif GAMEMNGR.currentMG == "star_wars":
+		var scenes = ['res://Scenes/IndianaJonesMiniGame.tscn']
+		FADE_EFFECT.scene_transition(scenes[randi() % scenes.size()])
+		
+
