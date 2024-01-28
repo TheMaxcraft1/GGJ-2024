@@ -6,6 +6,9 @@ var patterns_dict = {
 	"stair": ['res://Textures/StarWarsMiniGame/Patterns/StairPattern.png', 'res://StarWarsPatternPoints/StairPatternPoints.tres'],
 	"pentagon": ['res://Textures/StarWarsMiniGame/Patterns/PentagonPattern.png', 'res://StarWarsPatternPoints/PentagonPatternPoints.tres']
 }
+
+var player_win : bool
+var minigame_started : bool
 	
 
 # Called when the node enters the scene tree for the first time.
