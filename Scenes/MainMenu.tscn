@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bdkgv8ebyct47"]
+[gd_scene load_steps=25 format=3 uid="uid://bdkgv8ebyct47"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_jvb77"]
 [ext_resource type="Texture2D" uid="uid://bpxu0dydljj2d" path="res://Textures/MainMenu/MainMenuBG.png" id="2_0qui7"]
@@ -13,51 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://c1bfkphu82yuj" path="res://Textures/MainMenu/CreditsHover.png" id="11_04hme"]
 [ext_resource type="FontFile" uid="uid://c30m0eaghd5hx" path="res://Fonts/Comicy.ttf" id="12_5hadk"]
 [ext_resource type="AudioStream" uid="uid://bcro7oc13e3pf" path="res://SFX/MainMenu/HoverButtonSound.wav" id="12_7s0ak"]
-[ext_resource type="Texture2D" uid="uid://btnq3p20xdtsk" path="res://Textures/MainMenu/BackButton.png" id="12_lnaj6"]
+[ext_resource type="Texture2D" uid="uid://dop6h6o653kua" path="res://Textures/MainMenu/BackNormal.png" id="12_h4ok2"]
+[ext_resource type="Texture2D" uid="uid://b4vvsgrahlqao" path="res://Textures/MainMenu/BackPush.png" id="13_ik716"]
 [ext_resource type="AudioStream" uid="uid://t5cnes73bbhy" path="res://SFX/MainMenu/ButtonPressedSound.wav" id="13_iqejk"]
 [ext_resource type="Script" path="res://Scripts/VolumeSlider.gd" id="13_q3bn8"]
+[ext_resource type="Texture2D" uid="uid://cwno5xl816rjc" path="res://Textures/MainMenu/BackHover.png" id="14_52v2e"]
 [ext_resource type="FontFile" uid="uid://5541nbtfqqog" path="res://Fonts/Dosis-VariableFont_wght.ttf" id="15_k847u"]
 [ext_resource type="AudioStream" uid="uid://bpl6viuh0m88c" path="res://Music/MainMenu/CapibaraMusic.ogg" id="16_i5qyj"]
-
-[sub_resource type="Animation" id="Animation_ii8ov"]
-resource_name = "settings_anim"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/MarginContainer2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-960, 405), Vector2(-1, 405)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/MarginContainer:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-1, 405), Vector2(960, 405)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/Control:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-923, 270), Vector2(37, 270)]
-}
 
 [sub_resource type="Animation" id="Animation_40bqj"]
 length = 0.001
@@ -71,7 +33,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1, 405)]
+"values": [Vector2(195, 405)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -124,18 +86,58 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_a6mkf"]
 resource_name = "credits_anim"
-length = 0.5
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/MarginContainer:size")
+tracks/0/path = NodePath("CanvasLayer/MarginContainer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": []
+"values": [Vector2(195, 405), Vector2(-960, 405)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/MarginContainer3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(960, 405), Vector2(-1, 405)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Control3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(969, 270), Vector2(9, 270)]
+}
+
+[sub_resource type="Animation" id="Animation_ii8ov"]
+resource_name = "settings_anim"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/MarginContainer2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-960, 405), Vector2(-1, 405)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -144,34 +146,22 @@ tracks/1/path = NodePath("CanvasLayer/MarginContainer:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1, 405), Vector2(-960, 405)]
+"values": [Vector2(195, 405), Vector2(960, 405)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/MarginContainer3:position")
+tracks/2/path = NodePath("CanvasLayer/Control:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(960, 405), Vector2(-1, 405)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CanvasLayer/Control3:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1853, 270), Vector2(893, 270)]
+"values": [Vector2(-80, 270), Vector2(880, 270)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_af30p"]
@@ -204,28 +194,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -481.0
-offset_top = 135.0
-offset_right = 479.0
-offset_bottom = 270.0
+offset_left = 195.0
+offset_top = 405.0
+offset_right = 765.0
+offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 192
-
-[node name="SettingsButton" type="TextureButton" parent="CanvasLayer/MarginContainer/HBoxContainer"]
-layout_mode = 2
-texture_normal = ExtResource("3_8i1bq")
-texture_pressed = ExtResource("5_rx6l3")
-texture_hover = ExtResource("4_oqdcl")
+theme_override_constants/separation = 0
 
 [node name="PlayButton" type="TextureButton" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_beb8m")
 texture_pressed = ExtResource("4_1sauu")
 texture_hover = ExtResource("5_1xppx")
+
+[node name="SettingsButton" type="TextureButton" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_8i1bq")
+texture_pressed = ExtResource("5_rx6l3")
+texture_hover = ExtResource("4_oqdcl")
 
 [node name="CreditsButton" type="TextureButton" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -243,11 +233,12 @@ offset_bottom = 310.0
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = -7.0
-offset_right = 249.0
-offset_bottom = 256.0
-scale = Vector2(0.2, 0.2)
-texture_normal = ExtResource("12_lnaj6")
+offset_right = 76.0
+offset_bottom = 78.0
+texture_normal = ExtResource("12_h4ok2")
+texture_pressed = ExtResource("13_ik716")
+texture_hover = ExtResource("14_52v2e")
+flip_h = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer"]
 offset_left = -960.0
@@ -364,15 +355,14 @@ offset_bottom = 310.0
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control3"]
 layout_mode = 0
 offset_left = -7.0
-offset_right = 249.0
-offset_bottom = 256.0
-scale = Vector2(0.2, 0.2)
-texture_normal = ExtResource("12_lnaj6")
-flip_h = true
+offset_right = 69.0
+offset_bottom = 78.0
+texture_normal = ExtResource("12_h4ok2")
+texture_pressed = ExtResource("13_ik716")
+texture_hover = ExtResource("14_52v2e")
 
 [node name="HoverButton" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_7s0ak")
-volume_db = -29.045
 bus = &"SFX"
 
 [node name="ButtonPressed" type="AudioStreamPlayer" parent="."]
@@ -389,10 +379,10 @@ libraries = {
 "": SubResource("AnimationLibrary_af30p")
 }
 
-[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/HBoxContainer/SettingsButton" to="." method="_on_settings_button_mouse_entered"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/MarginContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/MarginContainer/HBoxContainer/SettingsButton" to="." method="_on_settings_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/MarginContainer/HBoxContainer/CreditsButton" to="." method="_on_credits_button_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/Control/TextureButton" to="." method="_on_texture_button_mouse_entered"]

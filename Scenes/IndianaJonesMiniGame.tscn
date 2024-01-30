@@ -647,17 +647,14 @@ bus = &"SFX"
 
 [node name="RockFalling" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_jf711")
-volume_db = -14.232
 bus = &"SFX"
 
 [node name="RockMoving" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_yr61r")
-volume_db = -14.232
 bus = &"SFX"
 
 [node name="ComicShout" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_f0ga2")
-volume_db = -7.15
 bus = &"SFX"
 
 [connection signal="timeout" from="MGTimer" to="." method="_on_mg_timer_timeout"]

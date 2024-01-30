@@ -8,10 +8,8 @@ func _ready():
 		$Background.texture = preload('res://Textures/TransitionBackgrounds/IndJonesTransitionBG.png')
 	elif GAMEMNGR.currentMG == 'star_wars':
 		$Background.texture = preload('res://Textures/TransitionBackgrounds/StarWarsTransitionBG.png')
-	else:
-		pass
-	
-	
+	elif GAMEMNGR.currentMG == "et":
+		$Background.texture = preload('res://Textures/TransitionBackgrounds/ETTransitionBG.png')
 	
 	
 	$ScoreLabel.text = "SCORE: " + str(GAMEMNGR.score)
@@ -24,10 +22,13 @@ func _process(delta):
 
 func _on_transition_time_timeout():
 	if GAMEMNGR.currentMG == "indiana_jones":
-		var scenes = ['res://Scenes/StarWarsMiniGame.tscn']
+		var scenes = ['res://Scenes/StarWarsMiniGame.tscn', 'res://Scenes/ETMinigame.tscn']
 		FADE_EFFECT.scene_transition(scenes[randi() % scenes.size()])
 	elif GAMEMNGR.currentMG == "star_wars":
-		var scenes = ['res://Scenes/IndianaJonesMiniGame.tscn']
+		var scenes = ['res://Scenes/IndianaJonesMiniGame.tscn', 'res://Scenes/ETMinigame.tscn']
+		FADE_EFFECT.scene_transition(scenes[randi() % scenes.size()])
+	elif GAMEMNGR.currentMG == "et":
+		var scenes = ['res://Scenes/IndianaJonesMiniGame.tscn', 'res://Scenes/StarWarsMiniGame.tscn']
 		FADE_EFFECT.scene_transition(scenes[randi() % scenes.size()])
 		
 

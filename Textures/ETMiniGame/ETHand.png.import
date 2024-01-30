@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btnq3p20xdtsk"
-path="res://.godot/imported/BackButton.png-0791a4f0f4774a3037247f45b81df7e0.ctex"
+uid="uid://btah8yg6yo1q0"
+path="res://.godot/imported/ETHand.png-ea15ee95d39482efd7558b1f79e56659.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/MainMenu/BackButton.png"
-dest_files=["res://.godot/imported/BackButton.png-0791a4f0f4774a3037247f45b81df7e0.ctex"]
+source_file="res://Textures/ETMiniGame/ETHand.png"
+dest_files=["res://.godot/imported/ETHand.png-ea15ee95d39482efd7558b1f79e56659.ctex"]
 
 [params]
 

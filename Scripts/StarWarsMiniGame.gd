@@ -21,7 +21,7 @@ func _ready():
 	
 	if difficulty_scale >= 5:
 		difficulty_scale = 4
-	$Timer.wait_time = 6 - difficulty_scale
+	$Timer.wait_time = 9 - difficulty_scale
 	
 	var patterns = patterns_dict.keys()
 	randomize()
